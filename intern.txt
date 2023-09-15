@@ -1,0 +1,41 @@
+import java.util.Scanner;
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    ArrayList<Integer>list=new ArrayList<>();
+	    Scanner sc=new Scanner(System.in);
+		
+		while(true)
+		{
+		    
+		    System.out.println("enterr integer or comma spaced integer : enter q to exit program");
+		    String s=sc.nextLine();
+		    if(s.equals("q")||s.equals("Q"))
+		    {
+		        System.out.println("Quitting program");
+		        break;
+		    }
+		    String str[]=s.split(",");
+		    for(String it:str)
+		    {
+		        list.add(Integer.parseInt(it));
+		    }
+		    Collections.sort(list);
+		  //  System.out.println(list);
+		    System.out.println("max items");
+		    int i=0;
+		    String pri="";
+		    while(i<5&&i<list.size())
+		    {
+		      //  System.out.println(list.get(i));
+		        pri=pri+String.valueOf(list.get(list.size()-1-i))+",";
+		        i++;
+		    }
+		    System.out.println(pri.substring(0,pri.length()-1));
+		    
+		}
+	
+	}
+}
+
